@@ -44,7 +44,17 @@ function end1(){
   } else {
     //alert("you win");
     document.getElementById("status").textContent = "YOU WIN";
+    let maze = document.getElementById("maze");
+    maze.addEventListener("mouseleave",function(){
+        var x = document.querySelectorAll("#maze div.boundary");
+        for (var i = 0; i < x.length; i++) {
     
+          x[i].classList.remove("youlose");
+        }
+        lose= false;
+        document.getElementById("status").textContent = "YOU WIN";
+  
+    });
   }
 	
 }
