@@ -27,10 +27,12 @@ function end1(){
 
  function colour() {
   lose = true;
+  
   var x = document.querySelectorAll("#maze div.boundary");
   for (var i = 0; i < x.length; i++) {
     
     x[i].classList.add("youlose");
   }
+  end1();
 } 
 
