@@ -1,13 +1,23 @@
 var lose = false ;
 
 window.onload = function(){
-  myFunction()
+  let startgame=document.getElementById("start");
+  startgame.addEventListener("mouseover",function(){
+    myFunction();
+    let maze = document.getElementById("maze");
+    maze.addEventListener("mouseleave",function(){
+    colour();
+    end1();
+    });
+  })
+  
 };
 
  function myFunction() {
   var x = document.querySelectorAll("#maze div.boundary");
   var end = document.getElementById("end");
   var start = document.getElementById("start");
+  var maze = document.getElementById("maze");
 
   for (var i = 0; i < x.length; i++) {
     x[i].addEventListener("mouseover", colour);
@@ -23,6 +33,7 @@ window.onload = function(){
   
   }
   end.addEventListener("mouseover", end1);
+
   
 }
 
@@ -33,7 +44,7 @@ function end1(){
   } else {
     //alert("you win");
     document.getElementById("status").textContent = "YOU WIN";
-  
+    
   }
 	
 }
