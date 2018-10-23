@@ -13,11 +13,13 @@ window.onload = function(){
     x[i].addEventListener("mouseover", colour);
   }
   start.onclick = function() {
+
       var x = document.querySelectorAll("#maze div.boundary");
       for (var i = 0; i < x.length; i++) {
     
       x[i].classList.remove("youlose");
-  }
+    }
+    lose= false;
   
   }
   end.addEventListener("mouseover", end1);
@@ -26,9 +28,12 @@ window.onload = function(){
 
 function end1(){
   if (lose){
-    alert("you lose")
+    //alert("you lose");
+    document.getElementById("status").textContent = "YOU LOSE";
   } else {
-    alert("you win");
+    //alert("you win");
+    document.getElementById("status").textContent = "YOU WIN";
+  
   }
 	
 }
