@@ -53,8 +53,11 @@ function end1(){
         }
         lose= false;
         document.getElementById("status").textContent = "YOU WIN";
-  
+        maze.addEventListener("mouseenter",function(){
+          location.reload();
+        });
     });
+
   }
 	
 }
