@@ -7,11 +7,19 @@ window.onload = function(){
  function myFunction() {
   var x = document.querySelectorAll("#maze div.boundary");
   var end = document.getElementById("end");
+  var start = document.getElementById("start");
 
   for (var i = 0; i < x.length; i++) {
     x[i].addEventListener("mouseover", colour);
   }
+  start.onclick = function() {
+      var x = document.querySelectorAll("#maze div.boundary");
+      for (var i = 0; i < x.length; i++) {
+    
+      x[i].classList.remove("youlose");
+  }
   
+  }
   end.addEventListener("mouseover", end1);
   
 }
