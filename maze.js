@@ -1,14 +1,16 @@
 window.onload = function(){
-	
-myFunction ();
+  myFunction()
+};
+ function myFunction() {
+  var x = document.querySelectorAll("#maze div.boundary");
+  for (var i = 0; i < x.length; i++) {
+    x[i].addEventListener("mouseover", colour);
+  }
 }
-
-function myFunction() {
-	var x = document.getElementById('boundary1');
-	x.addEventListener("mouseover",function(){
-		document.getElementById('boundary1').classList.add("youlose");
-	});
-	
+ function colour() {
+  var x = document.querySelectorAll("#maze div.boundary");
+  for (var i = 0; i < x.length; i++) {
     
-
-}
+    x[i].classList.add("youlose");
+  }
+} 
